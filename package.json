@@ -1,0 +1,20 @@
+{
+  "name": "cds-zig",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "build": "cd src && zig build-exe main.zig -target wasm32-freestanding -fno-entry -rdynamic",
+    "build:release": "npm run build -- -O ReleaseSmall",
+    "pretest": "npm run build",
+    "test": "cd test/bookshop && npm run start"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@sap/cds": "^7.9.0"
+  }
+}
